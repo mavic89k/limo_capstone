@@ -56,6 +56,6 @@ def generate_launch_description():
     return LaunchDescription([
         slam_launch,
         nav2_navigation_launch,
-        explore_node,
+        #explore_node,
         static_tf
     ])
