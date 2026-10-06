@@ -1,4 +1,4 @@
-image: domi_map.pgm
+image: domi_map.png
 mode: trinary
 resolution: 0.05
 origin: [-2.2, -1.51, 0]
