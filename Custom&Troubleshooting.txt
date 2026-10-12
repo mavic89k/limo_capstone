@@ -1,12 +1,10 @@
-📌 주요 커스텀 및 트러블슈팅 내역
-
-성공적인 자율주행을 위해 프로젝트 진행 중 다음 사항들을 디버깅하고 최적화했습니다.
+주요 커스텀 및 트러블슈팅 내역
 
 TF 누락 보정 (Costmap 충돌 에러 해결):
-제조사 기본 URDF에 누락된 base_footprint 프레임을 런치 파일 내부에서 정적 변환(static_transform_publisher)으로 강제 연결하여 Nav2 코스트맵 충돌 에러를 해결했습니다.
+기본 URDF에 누락된 base_footprint 프레임을 런치 파일 내부에서 변환, 연결하여 Nav2 에러를 해결.
 
 시간 동기화 오류 최적화:
-use_sim_time: False 강제 지정 및 TF 허용 오차(transform_tolerance)를 1.0초로 늘려 LIMO 보드의 CPU 과부하 시 발생하는 Failed to compute odom pose 위치 추정 실패 및 지연 현상을 완화했습니다.
+use_sim_time: False 지정 및 TF 허용 오차를 1.0초로 늘려 Failed to compute odom pose 위치 추정 실패 및 지연 현상을 완화.
 
 실내 좁은 공간 주행(Navigation) 최적화:
-코스트맵 인플레이션 반경(inflation_radius)을 기본 0.55m에서 0.30m로 대폭 축소하고 가중치를 조절하여, 폭이 좁은 복도나 방의 벽 근처에 접근 시 경로 생성을 포기하고 멈춰버리는(Stuck) 문제를 해결했습니다.
+코스트맵 인플레이션 반경(inflation_radius)을 기본 0.55m에서 0.30m로 축소하고 가중치를 조절하여, 폭이 좁은 복도나 방의 벽 근처에 접근 시 경로 생성을 포기하고 멈춰버리는 문제를 해결.
