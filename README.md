@@ -5,8 +5,7 @@
 ## 🛠️ 개발 환경 (Environment)
 * **OS:** Ubuntu 22.04 LTS
 * **ROS Version:** ROS 2 Humble
-* **Hardware:** AgileX LIMO (YDLidar Tmini Plus 탑재)
-
+* **Hardware:** AgileX LIMO Pro
 ## 📁 주요 디렉터리 구조 (Structure)
 ```text
 limo_capstone/
