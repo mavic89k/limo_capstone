@@ -1,0 +1,688 @@
+{
+  "environment_name": "complex_indoor",
+  "random_seed": 20261024,
+  "map_yaml": "/home/cjinw/school/2026-2/Capstone1_limo/output/simulation/complex_indoor_env/complex_indoor_map.yaml",
+  "map_pgm": "/home/cjinw/school/2026-2/Capstone1_limo/output/simulation/complex_indoor_env/complex_indoor_map.pgm",
+  "world_bounds_meters": [
+    16.0,
+    12.0
+  ],
+  "origin": [
+    -8.0,
+    -6.0,
+    0.0
+  ],
+  "resolution": 0.05,
+  "max_map_sdf_alignment_error_meters": 0.0,
+  "corridor_widths_meters": {
+    "south_main_corridor_route1": 2.1,
+    "middle_narrow_corridor_route2": 1.4,
+    "north_wide_corridor_route3": 2.2,
+    "west_loop_corridor": 1.8,
+    "central_west_avenue": 2.0,
+    "east_open_plaza": [
+      5.2,
+      8.8
+    ]
+  },
+  "alignment_verification": [
+    {
+      "name": "wall_outer_south",
+      "category": "outer_wall",
+      "sdf_center": [
+        0.0,
+        -5.9
+      ],
+      "sdf_size": [
+        16.0,
+        0.2
+      ],
+      "max_grid_alignment_error_m": 0.0,
+      "occupied_cells": 1280
+    },
+    {
+      "name": "wall_outer_north",
+      "category": "outer_wall",
+      "sdf_center": [
+        0.0,
+        5.9
+      ],
+      "sdf_size": [
+        16.0,
+        0.2
+      ],
+      "max_grid_alignment_error_m": 0.0,
+      "occupied_cells": 1280
+    },
+    {
+      "name": "wall_outer_west",
+      "category": "outer_wall",
+      "sdf_center": [
+        -7.9,
+        0.0
+      ],
+      "sdf_size": [
+        0.2,
+        12.0
+      ],
+      "max_grid_alignment_error_m": 0.0,
+      "occupied_cells": 960
+    },
+    {
+      "name": "wall_outer_east",
+      "category": "outer_wall",
+      "sdf_center": [
+        7.9,
+        0.0
+      ],
+      "sdf_size": [
+        0.2,
+        12.0
+      ],
+      "max_grid_alignment_error_m": 0.0,
+      "occupied_cells": 960
+    },
+    {
+      "name": "island_west_loop",
+      "category": "internal_wall",
+      "sdf_center": [
+        -5.0,
+        1.8
+      ],
+      "sdf_size": [
+        2.0,
+        2.4
+      ],
+      "max_grid_alignment_error_m": 0.0,
+      "occupied_cells": 1920
+    },
+    {
+      "name": "wall_nw_divider",
+      "category": "internal_wall",
+      "sdf_center": [
+        -5.0,
+        4.4
+      ],
+      "sdf_size": [
+        2.0,
+        0.2
+      ],
+      "max_grid_alignment_error_m": 0.0,
+      "occupied_cells": 160
+    },
+    {
+      "name": "wall_south_divider",
+      "category": "internal_wall",
+      "sdf_center": [
+        -0.2,
+        -3.1
+      ],
+      "sdf_size": [
+        7.2,
+        0.2
+      ],
+      "max_grid_alignment_error_m": 0.0,
+      "occupied_cells": 576
+    },
+    {
+      "name": "wall_deadend_east_cap",
+      "category": "dead_end_wall",
+      "sdf_center": [
+        3.3,
+        -4.5
+      ],
+      "sdf_size": [
+        0.2,
+        2.6
+      ],
+      "max_grid_alignment_error_m": 0.0,
+      "occupied_cells": 208
+    },
+    {
+      "name": "wall_deadend_baffle",
+      "category": "dead_end_wall",
+      "sdf_center": [
+        0.6,
+        -4.5
+      ],
+      "sdf_size": [
+        3.2,
+        0.2
+      ],
+      "max_grid_alignment_error_m": 0.0,
+      "occupied_cells": 256
+    },
+    {
+      "name": "island_center_south",
+      "category": "internal_wall",
+      "sdf_center": [
+        0.2,
+        -0.1
+      ],
+      "sdf_size": [
+        4.4,
+        1.6
+      ],
+      "max_grid_alignment_error_m": 0.0,
+      "occupied_cells": 2816
+    },
+    {
+      "name": "island_center_north",
+      "category": "internal_wall",
+      "sdf_center": [
+        0.2,
+        2.85
+      ],
+      "sdf_size": [
+        4.4,
+        1.5
+      ],
+      "max_grid_alignment_error_m": 0.0,
+      "occupied_cells": 2640
+    },
+    {
+      "name": "mapped_obs_1",
+      "category": "mapped_static_obstacle",
+      "sdf_center": [
+        -5.2,
+        -4.4
+      ],
+      "sdf_size": [
+        0.5,
+        0.5
+      ],
+      "max_grid_alignment_error_m": 0.0,
+      "occupied_cells": 100
+    },
+    {
+      "name": "mapped_obs_2",
+      "category": "mapped_static_obstacle",
+      "sdf_center": [
+        4.2,
+        -1.1
+      ],
+      "sdf_size": [
+        0.5,
+        0.5
+      ],
+      "max_grid_alignment_error_m": 0.0,
+      "occupied_cells": 100
+    },
+    {
+      "name": "mapped_obs_3",
+      "category": "mapped_static_obstacle",
+      "sdf_center": [
+        4.2,
+        1.4
+      ],
+      "sdf_size": [
+        0.5,
+        0.5
+      ],
+      "max_grid_alignment_error_m": 0.0,
+      "occupied_cells": 100
+    },
+    {
+      "name": "mapped_obs_4",
+      "category": "mapped_static_obstacle",
+      "sdf_center": [
+        4.8,
+        3.9
+      ],
+      "sdf_size": [
+        0.5,
+        0.5
+      ],
+      "max_grid_alignment_error_m": 0.0,
+      "occupied_cells": 100
+    }
+  ],
+  "stage_worlds": {
+    "A": "/home/cjinw/school/2026-2/Capstone1_limo/output/simulation/complex_indoor_env/complex_indoor_stageA.sdf",
+    "B": "/home/cjinw/school/2026-2/Capstone1_limo/output/simulation/complex_indoor_env/complex_indoor_stageB.sdf",
+    "C": "/home/cjinw/school/2026-2/Capstone1_limo/output/simulation/complex_indoor_env/complex_indoor_stageC.sdf",
+    "D": "/home/cjinw/school/2026-2/Capstone1_limo/output/simulation/complex_indoor_env/complex_indoor_stageD.sdf",
+    "E": "/home/cjinw/school/2026-2/Capstone1_limo/output/simulation/complex_indoor_env/complex_indoor_stageE.sdf",
+    "F": "/home/cjinw/school/2026-2/Capstone1_limo/output/simulation/complex_indoor_env/complex_indoor_stageF.sdf"
+  },
+  "stages": {
+    "A": {
+      "stage_id": "A",
+      "name": "stage_A_baseline",
+      "title": "Stage A: 추가 장애물 없는 기본 목표점 주행 (Baseline)",
+      "description": "복잡 실내 환경(교차로·순환로·막다른 길·광장·지도 반영 고정 장애물 4개)에서 추가 미등록/이동 장애물 없이 S(-6.2, -2.0)에서 G(5.8, 1.4)까지 기본 주행",
+      "seed": 20261024,
+      "start_pose": [
+        -6.2,
+        -2.0,
+        0.0
+      ],
+      "goal_pose": [
+        5.8,
+        1.4,
+        0.0
+      ],
+      "timeout_sim": 75.0,
+      "unmapped_obstacles": [],
+      "moving_obstacles": [],
+      "expected_behavior": "남측 주 통로(폭 2.1m, y=-1.95)를 통과한 뒤 동측 광장의 지도 반영 고정 장애물(mapped_obs_2, mapped_obs_3)을 자연스럽게 회피하여 목적지 G 도달"
+    },
+    "B": {
+      "stage_id": "B",
+      "name": "stage_B_multi_unmapped",
+      "title": "Stage B: 여러 미등록 고정 장애물 발견과 단계적 경로 재계획",
+      "description": "사전 지도에 없는 고정 장애물 3개가 남측 주 통로(Route 1), 중앙 좁은 복도(Route 2), 북측 우회 통로(Route 3)에 배치되어 센서 감지 시마다 실시간으로 전역 경로를 재계획",
+      "seed": 20261024,
+      "start_pose": [
+        -6.2,
+        -2.0,
+        0.0
+      ],
+      "goal_pose": [
+        5.8,
+        1.4,
+        0.0
+      ],
+      "timeout_sim": 110.0,
+      "unmapped_obstacles": [
+        {
+          "name": "unmapped_obs_1",
+          "pose": [
+            -1.55,
+            -1.95,
+            0.35
+          ],
+          "size": [
+            0.45,
+            1.55,
+            0.7
+          ],
+          "role": "남측 주 통로(Route 1, y=-1.95) 차단 → 교차로(x=-3.0) 진입 전 라이다 감지 후 중앙 복도(Route 2)로 1차 우회 재계획 유도"
+        },
+        {
+          "name": "unmapped_obs_2",
+          "pose": [
+            -2.05,
+            1.4,
+            0.35
+          ],
+          "size": [
+            0.4,
+            1.36,
+            0.7
+          ],
+          "role": "중앙 좁은 복도(Route 2, y=+1.40) 입구 차단 → 북상 중 라이다 감지 후 북측 광폭 통로(Route 3, y=+4.70)로 2차 우회 재계획 유도"
+        },
+        {
+          "name": "unmapped_obs_3",
+          "pose": [
+            0.8,
+            3.95,
+            0.35
+          ],
+          "size": [
+            0.45,
+            0.45,
+            0.7
+          ],
+          "role": "북측 광폭 통로(Route 3) 내 부분 장애물 → 발견 시 북측 여유 공간(y=+4.85)으로 3차 경로 조정 유도"
+        }
+      ],
+      "moving_obstacles": [],
+      "expected_behavior": "최초 경로(남측 통로) 출발 → unmapped_obs_1 라이다 감지 및 Costmap 반영 → 1차 재계획(중앙 복도) → unmapped_obs_2 감지 → 2차 재계획(북측 광폭 우회로) → unmapped_obs_3 회피 후 목적지 G 도달"
+    },
+    "C": {
+      "stage_id": "C",
+      "name": "stage_C_single_moving_cross",
+      "title": "Stage C: 이동 장애물 1개가 통로를 완전히 횡단한 뒤 이탈",
+      "description": "남측 주 통로 주행 중 교차로(x=-3.0)에서 이동 장애물 1개가 통로를 북→남으로 완전히 횡단해 남측 공간(y=-4.3)으로 이탈한 뒤 로봇이 같은 목표로 주행을 재개하여 완주",
+      "seed": 20261024,
+      "start_pose": [
+        -6.2,
+        -2.0,
+        0.0
+      ],
+      "goal_pose": [
+        5.8,
+        1.4,
+        0.0
+      ],
+      "timeout_sim": 90.0,
+      "unmapped_obstacles": [],
+      "moving_obstacles": [
+        {
+          "name": "moving_obs_1",
+          "size": [
+            0.42,
+            0.42,
+            0.7
+          ],
+          "initial_pose": [
+            -3.0,
+            -0.35,
+            0.35
+          ],
+          "start_pose": [
+            -3.0,
+            -0.55,
+            0.35
+          ],
+          "end_pose": [
+            -3.0,
+            -4.35,
+            0.35
+          ],
+          "speed_mps": 0.38,
+          "trigger_type": "robot_x_ge",
+          "trigger_value": -4.8,
+          "clears_corridor": true,
+          "corridor_y_range": [
+            -2.8,
+            -1.1
+          ],
+          "description": "로봇이 x=-4.8m 통과 시 (-3.0, -0.55)에서 출발해 y=-1.95 통로를 0.38m/s로 횡단 후 (-3.0, -4.35)로 완전 이탈"
+        }
+      ],
+      "expected_behavior": "감지 → Costmap 반영 → 감속·대기 또는 국소 회피 → 장애물 완전 이탈 후 통로 개방 확인 → 주행 재개 → 목적지 G 완주"
+    },
+    "D": {
+      "stage_id": "D",
+      "name": "stage_D_multi_moving_cross",
+      "title": "Stage D: 서로 다른 시점에 이동 장애물 3개가 순차 횡단",
+      "description": "주행 구간을 따라 서로 다른 3개 지점(서측 교차로 x=-3.0, 동측 광장 진입부 x=+2.9, 목적지 전면 x=+4.9)에서 이동 장애물 3개가 순차적으로 횡단 후 이탈",
+      "seed": 20261024,
+      "start_pose": [
+        -6.2,
+        -2.0,
+        0.0
+      ],
+      "goal_pose": [
+        5.8,
+        1.4,
+        0.0
+      ],
+      "timeout_sim": 105.0,
+      "unmapped_obstacles": [],
+      "moving_obstacles": [
+        {
+          "name": "moving_obs_1",
+          "size": [
+            0.42,
+            0.42,
+            0.7
+          ],
+          "initial_pose": [
+            -3.0,
+            -0.35,
+            0.35
+          ],
+          "start_pose": [
+            -3.0,
+            -0.55,
+            0.35
+          ],
+          "end_pose": [
+            -3.0,
+            -4.35,
+            0.35
+          ],
+          "speed_mps": 0.4,
+          "trigger_type": "robot_x_ge",
+          "trigger_value": -4.8,
+          "clears_corridor": true,
+          "corridor_y_range": [
+            -2.8,
+            -1.1
+          ],
+          "description": "1차 횡단: 로봇 x>=-4.8m 도달 시 서측 교차로(x=-3.0)를 북→남으로 횡단 후 y=-4.35로 이탈"
+        },
+        {
+          "name": "moving_obs_2",
+          "size": [
+            0.42,
+            0.42,
+            0.7
+          ],
+          "initial_pose": [
+            2.9,
+            0.4,
+            0.35
+          ],
+          "start_pose": [
+            2.9,
+            0.2,
+            0.35
+          ],
+          "end_pose": [
+            2.9,
+            -2.65,
+            0.35
+          ],
+          "speed_mps": 0.4,
+          "trigger_type": "robot_x_ge",
+          "trigger_value": 1.0,
+          "clears_corridor": true,
+          "corridor_y_range": [
+            -2.5,
+            -0.8
+          ],
+          "description": "2차 횡단: 로봇 x>=+1.0m 도달 시 동측 광장 진입부(x=+2.9)를 북→남으로 횡단 후 y=-2.65로 이탈"
+        },
+        {
+          "name": "moving_obs_3",
+          "size": [
+            0.42,
+            0.42,
+            0.7
+          ],
+          "initial_pose": [
+            5.0,
+            3.1,
+            0.35
+          ],
+          "start_pose": [
+            5.0,
+            2.85,
+            0.35
+          ],
+          "end_pose": [
+            5.0,
+            -0.4,
+            0.35
+          ],
+          "speed_mps": 0.42,
+          "trigger_type": "robot_x_ge",
+          "trigger_value": 3.3,
+          "clears_corridor": true,
+          "corridor_y_range": [
+            0.4,
+            2.2
+          ],
+          "description": "3차 횡단: 로봇 x>=+3.3m 도달 시 목적지 G 전면(x=+5.0)을 북→남으로 횡단 후 y=-0.40으로 이탈"
+        }
+      ],
+      "expected_behavior": "서로 다른 시점에 출현하는 3개의 이동 장애물을 순차적으로 센서 감지·대응하고 모두 이탈한 뒤 목적지 G 도달"
+    },
+    "E": {
+      "stage_id": "E",
+      "name": "stage_E_combined_static_moving",
+      "title": "Stage E: 미등록 고정 장애물과 이동 장애물이 함께 있는 복합 환경",
+      "description": "미등록 고정 장애물이 남측 주 통로(Route 1)를 막아 중앙 복도(Route 2)로 우회하는 과정에서 복도 출구와 동측 광장에서 이동 장애물 2개가 순차 횡단하는 복합 시나리오",
+      "seed": 20261024,
+      "start_pose": [
+        -6.2,
+        -2.0,
+        0.0
+      ],
+      "goal_pose": [
+        5.8,
+        1.4,
+        0.0
+      ],
+      "timeout_sim": 110.0,
+      "unmapped_obstacles": [
+        {
+          "name": "unmapped_obs_1",
+          "pose": [
+            -1.55,
+            -1.95,
+            0.35
+          ],
+          "size": [
+            0.45,
+            1.55,
+            0.7
+          ],
+          "role": "남측 주 통로(Route 1, y=-1.95) 차단 → 북측 방향 우회 경로(x=-3.0 → Route 2 y=+1.40) 재계획 유도"
+        }
+      ],
+      "moving_obstacles": [
+        {
+          "name": "moving_obs_1",
+          "size": [
+            0.42,
+            0.42,
+            0.7
+          ],
+          "initial_pose": [
+            2.9,
+            2.85,
+            0.35
+          ],
+          "start_pose": [
+            2.9,
+            2.65,
+            0.35
+          ],
+          "end_pose": [
+            2.9,
+            -0.35,
+            0.35
+          ],
+          "speed_mps": 0.4,
+          "trigger_type": "robot_x_ge",
+          "trigger_value": 0.8,
+          "clears_corridor": true,
+          "corridor_y_range": [
+            0.6,
+            2.2
+          ],
+          "description": "1차 이동 장애물: 로봇이 우회 복도(Route 2)를 통과해 x>=+0.8m에 도달할 때 복도 출구(x=+2.9)를 북→남으로 횡단 후 y=-0.35로 완전 이탈"
+        },
+        {
+          "name": "moving_obs_2",
+          "size": [
+            0.42,
+            0.42,
+            0.7
+          ],
+          "initial_pose": [
+            5.0,
+            3.1,
+            0.35
+          ],
+          "start_pose": [
+            5.0,
+            2.85,
+            0.35
+          ],
+          "end_pose": [
+            5.0,
+            -0.4,
+            0.35
+          ],
+          "speed_mps": 0.42,
+          "trigger_type": "robot_x_ge",
+          "trigger_value": 3.2,
+          "clears_corridor": true,
+          "corridor_y_range": [
+            0.4,
+            2.2
+          ],
+          "description": "2차 이동 장애물: 로봇이 동측 광장에 진입해 x>=+3.2m에 도달할 때 목적지 G 전면(x=+5.0)을 북→남으로 횡단 후 y=-0.40으로 완전 이탈"
+        }
+      ],
+      "expected_behavior": "미등록 고정 장애물 감지 후 우회 경로 재계획 + 우회 통로에서 마주치는 이동 장애물 2개 순차 대응 후 목적지 G 도달"
+    },
+    "F": {
+      "stage_id": "F",
+      "name": "stage_F_blocked_corridor",
+      "title": "Stage F: 장애물이 통로에 남는 완전 차단 및 안전 정지 상황",
+      "description": "대체 우회로 입구가 차단된 상태에서 전방 통로 중앙에 장애물이 진입·정지하여 유효 경로가 완전히 사라진 조건에서 안전 거리(>=10cm)를 유지하며 무충돌 정지·대기하는지 검증",
+      "seed": 20261024,
+      "start_pose": [
+        -6.2,
+        -2.0,
+        0.0
+      ],
+      "goal_pose": [
+        1.5,
+        -1.95,
+        0.0
+      ],
+      "timeout_sim": 40.0,
+      "unmapped_obstacles": [
+        {
+          "name": "blocking_obs_north_seal",
+          "pose": [
+            -3.0,
+            -0.55,
+            0.35
+          ],
+          "size": [
+            1.85,
+            0.45,
+            0.7
+          ],
+          "role": "서측 북상 교차로(x=-3.0, y=-0.55) 봉쇄"
+        },
+        {
+          "name": "blocking_obs_south_seal",
+          "pose": [
+            -3.0,
+            -3.1,
+            0.35
+          ],
+          "size": [
+            1.85,
+            0.45,
+            0.7
+          ],
+          "role": "서측 남하 통로 봉쇄"
+        }
+      ],
+      "moving_obstacles": [
+        {
+          "name": "blocking_obs_main",
+          "size": [
+            0.5,
+            1.95,
+            0.7
+          ],
+          "initial_pose": [
+            -1.2,
+            -1.95,
+            0.35
+          ],
+          "start_pose": [
+            -1.2,
+            -1.95,
+            0.35
+          ],
+          "end_pose": [
+            -1.2,
+            -1.95,
+            0.35
+          ],
+          "speed_mps": 0.0,
+          "trigger_type": "always",
+          "trigger_value": 0.0,
+          "clears_corridor": false,
+          "remains_in_corridor": true,
+          "description": "남측 주 통로(x=-1.2, y=-1.95) 전체 폭을 완전히 가로막고 통로에 잔류하는 차단 장애물"
+        }
+      ],
+      "expected_behavior": "차단 장애물 감지 및 Costmap 반영 후 전방 최소 안전 간격(>=10cm)을 침범하지 않고 무충돌 정지·대기 유지"
+    }
+  }
+}
