@@ -54,16 +54,16 @@ from nav2_msgs.srv import ClearEntireCostmap
 from rosgraph_msgs.msg import Clock
 from tf2_msgs.msg import TFMessage
 
-BASE_DIR = pathlib.Path(__file__).resolve().parents[2]
-SIM_DIR = BASE_DIR / 'output/simulation'
-ENV_DIR = SIM_DIR / 'complex_indoor_env'
-RUNS_BASE_DIR = SIM_DIR / '2026-10-24_complex_indoor_runs'
+# 현재 스크립트 위치를 기준으로 패키지 최상위(limo_capstone) 설정
+PKG_DIR = pathlib.Path(__file__).resolve().parents[1]
+SCRIPT_DIR = PKG_DIR / 'scripts'
+RUNS_BASE_DIR = PKG_DIR / 'test_results'  # 평가 결과가 저장될 폴더
 
-PID_TRACK_FILE = SIM_DIR / 'active_session_pids.json'
-CMD_FILE = SIM_DIR / 'sim_command.json'
-STATUS_FILE = SIM_DIR / 'sim_status.json'
+PID_TRACK_FILE = SCRIPT_DIR / 'active_session_pids.json'
+CMD_FILE = SCRIPT_DIR / 'sim_command.json'
+STATUS_FILE = SCRIPT_DIR / 'sim_status.json'
 
-sys.path.insert(0, str(SIM_DIR))
+sys.path.insert(0, str(SCRIPT_DIR))
 from evaluation_lib import (
     compute_polygon_clearance_sat,
     make_robot_polygon,
@@ -1065,9 +1065,9 @@ def run_interactive_stage(stage_id: str, domain_id: int = 172):
     if CMD_FILE.exists():
         CMD_FILE.unlink()
 
-    manifest_path = ENV_DIR / 'complex_indoor_manifest.json'
+    manifest_path = SCRIPT_DIR / 'complex_indoor_manifest.json'
     if not manifest_path.exists():
-        subprocess.run(['python3', str(ENV_DIR / 'generate_complex_env.py')], check=True)
+        subprocess.run(['python3', str(SCRIPT_DIR / 'generate_complex_env.py')], check=True)
     manifest = json.loads(manifest_path.read_text())
 
     stage_key = stage_id.upper()
@@ -1078,10 +1078,10 @@ def run_interactive_stage(stage_id: str, domain_id: int = 172):
     world_path = pathlib.Path(manifest['stage_worlds'][stage_key])
     map_yaml_path = pathlib.Path(manifest['map_yaml'])
     map_pgm_path = pathlib.Path(manifest['map_pgm'])
-    params_path = ENV_DIR / 'nav2_complex_indoor_ackermann_params.yaml'
-    bt_xml_path = BASE_DIR / 'capstone_ws/src/limo_capstone/config/navigate_to_pose_ackermann_backup30.xml'
-    model_path = BASE_DIR / 'output/simulation/2026-10-24/inputs/limo_contact_check.sdf'
-    rviz_cfg_path = ENV_DIR / 'complex_indoor_nav2.rviz'
+    params_path = PKG_DIR / 'config' / 'nav2_complex_indoor_ackermann_params.yaml'
+    bt_xml_path = PKG_DIR / 'config' / 'behavior_tree.xml'
+    model_path = PKG_DIR / 'models' / 'limo_ackermann_fortress.sdf'
+    rviz_cfg_path = PKG_DIR / 'config' / 'rviz_config.rviz'
 
     ts_str = time.strftime("%Y%m%d_%H%M%S")
     run_dir = RUNS_BASE_DIR / f"stage_{stage_key}_{stage_cfg['name']}_{ts_str}"

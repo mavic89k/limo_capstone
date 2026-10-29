@@ -670,7 +670,7 @@ def evaluate_scenario_from_records(scenario_dir: pathlib.Path, runtime_meta: Opt
     world_candidates = [
         meta.get('world'),
         str(scenario_dir / 'world.sdf'),
-        str(pathlib.Path(__file__).resolve().parent / '2026-10-24_verification/maze/maze_sc5_moving.sdf')
+        str(pathlib.Path(__file__).resolve().parents[1] / 'worlds/world.sdf')
     ]
     world_file = None
     for cand in world_candidates:

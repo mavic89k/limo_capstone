@@ -6,10 +6,10 @@ import pathlib
 import shutil
 import xml.etree.ElementTree as ET
 
-ROOT = pathlib.Path(__file__).resolve().parent
+ROOT = pathlib.Path(__file__).resolve().parents[1] # 최상위 폴더 기준
 
 def prepare():
-    original = ROOT / 'complex_indoor_env'
+    original = ROOT / 'scripts' # json 등 설정 파일이 있는 현재 스크립트 폴더
     target = ROOT / 'oscillating_env'
     target.mkdir(exist_ok=True)
     manifest = json.loads((original / 'complex_indoor_manifest.json').read_text())

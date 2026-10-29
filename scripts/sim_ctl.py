@@ -20,8 +20,8 @@ import json
 import subprocess
 import pathlib
 
-BASE_DIR = pathlib.Path(__file__).resolve().parents[2]
-SIM_DIR = BASE_DIR / 'output/simulation'
+PKG_DIR = pathlib.Path(__file__).resolve().parents[1] # limo_capstone 최상위
+SIM_DIR = PKG_DIR / 'scripts' # 스크립트들이 모여있는 폴더
 CMD_FILE = SIM_DIR / 'sim_command.json'
 STATUS_FILE = SIM_DIR / 'sim_status.json'
 PID_TRACK_FILE = SIM_DIR / 'active_session_pids.json'
@@ -77,7 +77,7 @@ def print_status():
 def get_ros2_env() -> dict:
     env = os.environ.copy()
     if 'limo_capstone' not in env.get('AMENT_PREFIX_PATH', ''):
-        ws_setup = str(BASE_DIR / 'capstone_ws/install/setup.bash')
+        ws_setup = str(pathlib.Path(__file__).resolve().parents[4] / 'install/setup.bash')
         cmd = f'source /opt/ros/humble/setup.bash && source "{ws_setup}" && env -0'
         raw_env = subprocess.check_output(['/bin/bash', '-c', cmd])
         for entry in raw_env.split(b'\0'):

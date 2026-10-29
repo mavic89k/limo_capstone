@@ -3,8 +3,8 @@ import copy,json,pathlib,sys,shutil,xml.etree.ElementTree as ET
 import numpy as np
 from PIL import Image
 HERE=pathlib.Path(__file__).resolve().parent
-SIM=HERE.parent
-sys.path.insert(0,str(SIM));sys.path.insert(0,str(SIM/'complex_indoor_env'))
+SIM=HERE.parents[1]  # limo_capstone 최상위 폴더를 정확히 가리키도록 변경
+sys.path.insert(0,str(SIM/'scripts')) # evaluation_lib이 있는 scripts 폴더 추가
 from generate_complex_env import define_complex_geometry,build_occupancy_grid_and_verify,generate_stage_sdf
 
 def prepare():

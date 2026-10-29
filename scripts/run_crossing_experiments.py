@@ -36,8 +36,11 @@ from nav2_msgs.action import NavigateToPose
 from rosgraph_msgs.msg import Clock
 from tf2_msgs.msg import TFMessage
 
-BASE_DIR = pathlib.Path(__file__).resolve().parents[2]
-sys.path.insert(0, str(BASE_DIR / 'output/simulation'))
+# 1. 현재 스크립트 위치를 기준으로 패키지 최상위 폴더(limo_capstone)를 동적으로 찾아냄
+PKG_DIR = pathlib.Path(__file__).resolve().parents[1]
+# evaluation_lib.py가 같은 scripts 폴더 내에 있으므로 바로 import
+# BASE_DIR = pathlib.Path(__file__).resolve().parents[2]
+# sys.path.insert(0, str(BASE_DIR / 'output/simulation'))
 from evaluation_lib import (
     point_to_segment_distance,
     compute_polygon_clearance_sat,
@@ -744,11 +747,11 @@ if __name__ == '__main__':
     parser.add_argument('--scenario', required=True, choices=['clean_crossing', 'corridor_remain'], help="Scenario type")
     parser.add_argument('--domain-id', default='162', help="ROS Domain ID")
     parser.add_argument('--world-name', default='mc3f_world', help="Gazebo world name")
-    parser.add_argument('--world', default=str(BASE_DIR / 'output/simulation/2026-10-24_verification/maze/maze_sc5_moving.sdf'), help="World SDF path")
-    parser.add_argument('--map', default=str(BASE_DIR / 'output/simulation/2026-10-24_verification/maze/maze_map.yaml'), help="Map YAML path")
-    parser.add_argument('--params-file', default=str(BASE_DIR / 'capstone_ws/src/limo_capstone/config/nav2_sim_ackermann_params.yaml'), help="Nav2 params path")
-    parser.add_argument('--bt-xml', default=str(BASE_DIR / 'capstone_ws/src/limo_capstone/config/navigate_to_pose_ackermann.xml'), help="BT XML path")
-    parser.add_argument('--model-file', default=str(BASE_DIR / 'output/simulation/2026-10-24/inputs/limo_contact_check.sdf'), help="Robot model SDF path")
+    parser.add_argument('--world', default=str(PKG_DIR / 'worlds/world.sdf'), help="World SDF path")
+    parser.add_argument('--map', default=str(PKG_DIR / 'maps/demo_map.yaml'), help="Map YAML path")
+    parser.add_argument('--params-file', default=str(PKG_DIR / 'config/sim_nav2_params.yaml'), help="Nav2 params path")
+    parser.add_argument('--bt-xml', default=str(PKG_DIR / 'config/behavior_tree.xml'), help="BT XML path")
+    parser.add_argument('--model-file', default=str(PKG_DIR / 'models/limo_ackermann_fortress.sdf'), help="Robot model SDF path")
     parser.add_argument('--output-dir', required=True, help="Output directory for results")
     parser.add_argument('--spawn-x', default='-2.0', help="Spawn X")
     parser.add_argument('--spawn-y', default='0.0', help="Spawn Y")
