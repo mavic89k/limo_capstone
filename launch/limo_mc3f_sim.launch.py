@@ -124,7 +124,8 @@ def generate_launch_description():
         name='ros_gz_bridge',
         output='screen',
         arguments=[
-            '/clock@rosgraph_msgs/msg/Clock[gz.msgs.Clock',
+            # 주의: clock은 브리지 호환성을 위해 ignition.msgs.Clock 유지
+            '/clock@rosgraph_msgs/msg/Clock[ignition.msgs.Clock',
             '/cmd_vel@geometry_msgs/msg/Twist]gz.msgs.Twist',
             '/odom@nav_msgs/msg/Odometry[gz.msgs.Odometry',
             '/scan@sensor_msgs/msg/LaserScan[gz.msgs.LaserScan',
