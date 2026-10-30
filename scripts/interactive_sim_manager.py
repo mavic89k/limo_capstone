@@ -57,6 +57,7 @@ from tf2_msgs.msg import TFMessage
 # 현재 스크립트 위치를 기준으로 패키지 최상위(limo_capstone) 설정
 PKG_DIR = pathlib.Path(__file__).resolve().parents[1]
 SCRIPT_DIR = PKG_DIR / 'scripts'
+SIM_DIR = SCRIPT_DIR
 RUNS_BASE_DIR = PKG_DIR / 'test_results'  # 평가 결과가 저장될 폴더
 
 PID_TRACK_FILE = SCRIPT_DIR / 'active_session_pids.json'
@@ -224,8 +225,8 @@ def set_ignition_pose(world_name: str, entity_name: str, x: float, y: float, z: 
     req = f'name: "{entity_name}", position: {{x: {x:.4f}, y: {y:.4f}, z: {z:.4f}}}, orientation: {{z: {qz:.5f}, w: {qw:.5f}}}'
     cmd = [
         'ign', 'service', '-s', f'/world/{world_name}/set_pose',
-        '--reqtype', 'ignition.msgs.Pose',
-        '--reptype', 'ignition.msgs.Boolean',
+        '--reqtype', 'gz.msgs.Pose',
+        '--reptype', 'gz.msgs.Boolean',
         '--timeout', '500',
         '--req', req
     ]
@@ -237,8 +238,8 @@ def set_ignition_pause(world_name: str, pause: bool, env: dict) -> bool:
     p_str = 'true' if pause else 'false'
     cmd = [
         'ign', 'service', '-s', f'/world/{world_name}/control',
-        '--reqtype', 'ignition.msgs.WorldControl',
-        '--reptype', 'ignition.msgs.Boolean',
+        '--reqtype', 'gz.msgs.WorldControl',
+        '--reptype', 'gz.msgs.Boolean',
         '--timeout', '800',
         '--req', f'pause: {p_str}'
     ]
@@ -987,8 +988,8 @@ class LiveGuiVideoRecorder:
             # Header Bar distinguishing Live GUI Recording from Log-Reconstructed Video
             draw.rectangle([(0, 0), (1920, 64)], fill=(30, 41, 59))
             draw.rounded_rectangle([(18, 12), (298, 52)], radius=8, fill=(22, 163, 74))
-            draw.text((28, 18), "시뮬레이션 · 실시간 GUI 녹화", fill=(255, 255, 255), font=FONT_BANNER)
-            draw.text((318, 18), f"{self.stage_cfg['title']}", fill=(248, 250, 252), font=FONT_BANNER)
+            draw.text((28, 18), "Simulation GUI Record", fill=(255, 255, 255), font=FONT_BANNER)
+            draw.text((318, 18), "Autonomous Navigation", fill=(248, 250, 252), font=FONT_BANNER)
 
             clr_cm = f"{min_clr * 100:.1f}cm" if min_clr != float('inf') else "-"
             status_str = f"상태: {phase} | Sim Clock: {sim_time:04.1f}s | 최소 간격: {clr_cm} | 배속: 1.0x (실시간)"
@@ -1188,8 +1189,8 @@ def run_interactive_stage(stage_id: str, domain_id: int = 172):
         # 2. Auxiliary bridge for overhead sensor camera & ground-truth poses
         bridge_cmd = [
             'ros2', 'run', 'ros_gz_bridge', 'parameter_bridge',
-            '/demo/overhead@sensor_msgs/msg/Image[ignition.msgs.Image',
-            '/world/mc3f_world/pose/info@tf2_msgs/msg/TFMessage[ignition.msgs.Pose_V'
+            '/demo/overhead@sensor_msgs/msg/Image[gz.msgs.Image',
+            '/world/mc3f_world/pose/info@tf2_msgs/msg/TFMessage[gz.msgs.Pose_V'
         ]
         spawn_tracked(bridge_cmd, 'aux_bridge')
 

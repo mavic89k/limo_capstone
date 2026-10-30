@@ -77,7 +77,7 @@ def print_status():
 def get_ros2_env() -> dict:
     env = os.environ.copy()
     if 'limo_capstone' not in env.get('AMENT_PREFIX_PATH', ''):
-        ws_setup = str(pathlib.Path(__file__).resolve().parents[4] / 'install/setup.bash')
+        ws_setup = str(pathlib.Path(__file__).resolve().parents[3] / 'install/setup.bash')
         cmd = f'source /opt/ros/humble/setup.bash && source "{ws_setup}" && env -0'
         raw_env = subprocess.check_output(['/bin/bash', '-c', cmd])
         for entry in raw_env.split(b'\0'):
@@ -124,7 +124,7 @@ def launch_stage_background(stage_id: str):
                     if not reported_ready and st.get('stage_id') == stage_key and st.get('phase') == 'WAITING_FOR_USER_START':
                         print_status()
                         print("\n[준비 완료] Gazebo GUI와 RViz2 창이 화면에 표시되었으며 목표 전송 전 대기(WAITING_FOR_USER_START) 상태입니다.", flush=True)
-                        print(" -> 주행을 시작하려면: python3 output/simulation/sim_ctl.py start", flush=True)
+                        print(" -> 주행을 시작하려면: python3 ~/capstone_ws/src/limo_capstone/scripts/sim_ctl.py start", flush=True)
                         reported_ready = True
                     elif not reported_finished and st.get('stage_id') == stage_key and st.get('phase') == 'FINISHED_WAITING_USER_CHOICE':
                         print_status()
