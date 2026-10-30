@@ -131,7 +131,7 @@
       <visual name="fl_wheel_visual">
         <geometry>
           <mesh>
-            <uri>model://limo_capstone/models/meshes/limo_wheel.dae</uri>
+            <uri>model://meshes/limo_wheel.dae</uri>
           </mesh>
         </geometry>
       </visual>
@@ -204,7 +204,7 @@
         <pose>0 0 0 3.14159 0 0</pose>
         <geometry>
          <mesh>
-            <uri>model://limo_capstone/models/meshes/limo_wheel.dae</uri>
+            <uri>model://meshes/limo_wheel.dae</uri>
           </mesh>
         </geometry>
       </visual>
@@ -244,7 +244,7 @@
       <visual name="rl_wheel_visual">
         <geometry>
          <mesh>
-            <uri>model://limo_capstone/models/meshes/limo_wheel.dae</uri>
+            <uri>model://meshes/limo_wheel.dae</uri>
           </mesh>
         </geometry>
       </visual>
@@ -285,7 +285,7 @@
         <pose>0 0 0 3.14159 0 0</pose>
         <geometry>
          <mesh>
-            <uri>model://limo_capstone/models/meshes/limo_wheel.dae</uri>
+            <uri>model://meshes/limo_wheel.dae</uri>
           </mesh>
         </geometry>
       </visual>
