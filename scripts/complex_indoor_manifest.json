@@ -1,8 +1,8 @@
 {
   "environment_name": "complex_indoor",
   "random_seed": 20261024,
-  "map_yaml": "/home/cjinw/school/2026-2/Capstone1_limo/output/simulation/complex_indoor_env/complex_indoor_map.yaml",
-  "map_pgm": "/home/cjinw/school/2026-2/Capstone1_limo/output/simulation/complex_indoor_env/complex_indoor_map.pgm",
+  "map_yaml": "/home/mavic/capstone_ws/src/limo_capstone/scripts/complex_indoor_map.yaml",
+  "map_pgm": "/home/mavic/capstone_ws/src/limo_capstone/scripts/complex_indoor_map.pgm",
   "world_bounds_meters": [
     16.0,
     12.0
@@ -238,12 +238,12 @@
     }
   ],
   "stage_worlds": {
-    "A": "/home/cjinw/school/2026-2/Capstone1_limo/output/simulation/complex_indoor_env/complex_indoor_stageA.sdf",
-    "B": "/home/cjinw/school/2026-2/Capstone1_limo/output/simulation/complex_indoor_env/complex_indoor_stageB.sdf",
-    "C": "/home/cjinw/school/2026-2/Capstone1_limo/output/simulation/complex_indoor_env/complex_indoor_stageC.sdf",
-    "D": "/home/cjinw/school/2026-2/Capstone1_limo/output/simulation/complex_indoor_env/complex_indoor_stageD.sdf",
-    "E": "/home/cjinw/school/2026-2/Capstone1_limo/output/simulation/complex_indoor_env/complex_indoor_stageE.sdf",
-    "F": "/home/cjinw/school/2026-2/Capstone1_limo/output/simulation/complex_indoor_env/complex_indoor_stageF.sdf"
+    "A": "/home/mavic/capstone_ws/src/limo_capstone/scripts/complex_indoor_stageA.sdf",
+    "B": "/home/mavic/capstone_ws/src/limo_capstone/scripts/complex_indoor_stageB.sdf",
+    "C": "/home/mavic/capstone_ws/src/limo_capstone/scripts/complex_indoor_stageC.sdf",
+    "D": "/home/mavic/capstone_ws/src/limo_capstone/scripts/complex_indoor_stageD.sdf",
+    "E": "/home/mavic/capstone_ws/src/limo_capstone/scripts/complex_indoor_stageE.sdf",
+    "F": "/home/mavic/capstone_ws/src/limo_capstone/scripts/complex_indoor_stageF.sdf"
   },
   "stages": {
     "A": {
