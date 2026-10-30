@@ -6,3 +6,4 @@ __pycache__/
 build/
 install/
 log/
+~/capstone_ws/src/limo_capstone/test_results/
